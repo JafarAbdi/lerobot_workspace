@@ -7,6 +7,28 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
+config-leader = """
+python lerobot/lerobot/scripts/configure_motor.py \
+  --port /dev/LeRobotLeader \
+  --brand feetech \
+  --model sts3215 \
+  --baudrate 1000000 \
+  --ID """
+
+config-follower = """
+python lerobot/lerobot/scripts/configure_motor.py \
+  --port /dev/LeRobotFollower \
+  --brand feetech \
+  --model sts3215 \
+  --baudrate 1000000 \
+  --ID """
+
+calibrate-follower = """
+python lerobot/lerobot/scripts/control_robot.py calibrate \
+  --robot-path lerobot/lerobot/configs/robot/moss.yaml \
+  --robot-overrides '~cameras' '~leader_arms' follower_arms.main.port=/dev/LeRobotFollower \
+  --arms main_follower
+"""
 
 [dependencies]
 python = "==3.10"

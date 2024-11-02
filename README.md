@@ -12,3 +12,17 @@
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
+
+### Configure the motors
+
+```bash
+pixi run config-leader X # Replace X with 1,2,3,4,5,6
+pixi run config-follower X # Replace X with 1,2,3,4,5,6
+```
+
+### Calibrate the follower robot
+
+
+```bash
+pixi run calibrate-follower
+```
