@@ -1,5 +1,12 @@
 # LeRobot Workspace
 
+## Installation
+
+```bash
+git clone --recurse-submodules https://github.com/JafarAbdi/lerobot_workspace.git
+pixi install -a
+```
+
 ## Usage
 
 ### Generate udev rules
